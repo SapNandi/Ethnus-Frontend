@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Roboto&display=swap");
+.banner {
+  /* background-image: url("../../images/cover.jfif"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1rem;
+  /* border: 1px solid black; */
+}
+
+.css-1m9128y {
+  display: none;
+}
+
+.banner .bannerSlider {
+  /* width: 80%; */
+  width: 100%;
+  height: 62vh;
+  margin-top: 0.4rem;
+  position: relative;
+  /* border: 1px solid black; */
+}
+
+.bannerImage {
+  /* object-fit: cover !important;
+  position: relative;
+  z-index: 100;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px; */
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* border-radius: 16px; */
+}
+
+.banner > h1 {
+  margin: 5vmax;
+
+  font: 600 2.5vmax "Roboto";
+}
+
+.banner > p {
+  font: 300 1.4vmax "Lucida Sans";
+}
+
+.banner > a > button {
+  margin-bottom: 5vmax;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 0;
+  padding: 1vmax;
+  transition: all 0.5s;
+  width: 9vmax;
+  font: 500 1vmax "Roboto";
+}
+.banner > a > button:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+/* .banner::after {
+  content: "";
+  width: 100vw;
+  height: 100vmin;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  clip-path: polygon(100% 68%, 0 100%, 100% 100%);
+  max-width: 100%;
+} */
+
+.homeHeading {
+  text-align: left;
+  width: 80vw;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6vmax;
+  /* border-bottom: 1px solid rgba(21, 21, 21, 0.5); */
+  /* width: 25vmax;
+  padding: 1vmax;
+  margin: 1rem 0 0 1rem; */
+  margin: 1rem 0 1rem 1rem;
+  color: rgb(0, 0, 0, 0.9);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .cardHolder {
+  display: flex;
+  /* margin: 2vmax auto; */
+  width: 80vw;
+  /* padding: 1vmax; */
+  /* margin: 1rem 0 0 1rem; */
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  gap: 2.2rem;
+}
+
+.productCard {
+  width: 14vmax;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: rgb(48, 48, 48);
+  margin: 0 auto 2vmax auto;
+  transition: all 0.5s;
+  padding-bottom: 0.5vmax;
+  border-radius: 16px 16px 0 0;
+}
+
+.productCard .productImage {
+  width: 14vmax;
+  border-radius: 16px;
+  transition: all 0.1s ease-out;
+}
+
+.productCard > div {
+  margin: 0.5vmax;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productCardSpan {
+  margin: 0.5vmax;
+  font: 300 0.7vmax "Roboto";
+}
+
+.productCard > p {
+  font-family: "Roboto";
+  font-size: 1.2vmax;
+  margin: 1vmax 0.5vmax;
+  margin-bottom: 0;
+}
+
+.productCard > span {
+  margin: 0.5vmax;
+  color: #4b1ea3;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1vmax;
+}
+
+.productCard:hover {
+  box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+
+  /* transform: translateY(-1vmax); */
+}
+
+.productCard:hover.productCard .productImage {
+  border-radius: 16px 16px 0 0;
+}
+
+/* Carousel settings */
+.swiper-button-prev::after {
+  font-size: 2rem !important;
+  color: #4b1ea3;
+  font-weight: bold;
+}
+.swiper-button-next::after {
+  font-size: 2rem !important;
+  color: #4b1ea3;
+  font-weight: bold;
+}
+
+.carouselHeight {
+  height: 30rem;
+}
+.carouselHeightResponsive {
+  height: 20rem;
+}
+
+.advertise {
+  background-image: url("/Ad1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  position: relative;
+}
+
+/* .advertise > img{
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+
+} */
+
+@media screen and (max-width: 600px) {
+  .productCard > p {
+    font-size: 1.7vmax;
+  }
+
+  .productCard > div {
+    margin: 0vmax;
+    display: block;
+  }
+
+  .productCard > span {
+    font-size: 1.5vmax;
+  }
+
+  .productCard > div > span {
+    margin: 0 0.5vmax;
+    font: 300 1vmax "Roboto";
+  }
+
+  .banner .bannerSlider {
+    width: 100%;
+  }
+
+  .bannerImage {
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .advertise {
+    height: 10vh;
+  }
+  .banner {
+    height: 47vh;
+  }
+  .banner .bannerSlider {
+    height: 35vh;
+  }
+
+  .banner .bannerSlider {
+    width: 100%;
+  }
+
+  .bannerImage {
+    border-radius: 0;
+  }
+}

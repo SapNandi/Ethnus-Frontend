@@ -1,0 +1,85 @@
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  height: 9.5vh;
+  /* display: flex; */
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8.5rem 0 2rem;
+  position: fixed;
+  top: 0;
+  background: rgb(51, 53, 69);
+  z-index: 100;
+}
+
+.navbar .leftNav {
+  display: flex;
+  flex: 4;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar .rightNav {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  justify-content: end;
+  align-items: center;
+}
+
+.navbar .leftNav .Logo {
+  /* border: 1px solid #fff; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .leftNav .Logo a h1 {
+  color: #fff;
+  font-family: "Roboto";
+  margin-left: 6.5rem;
+}
+
+.navbar .rightNav h2 {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  margin-right: 20px;
+}
+.navbar .rightNav a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+} 
+
+@media screen and (max-width: 600px) {
+  .rightNav {
+    display: none !important;
+  }
+
+  .navbar {
+    /* justify-content: space-around; */
+    justify-content: space-between;
+  }
+
+  .navbar .leftNav .Logo img {
+    /* width: 75px; */
+  }
+
+  .navbar {
+    width: 100%;
+    overflow: hidden;
+    height: 9.5vh;
+    /* display: flex; */
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4.5rem 0 0rem;
+    position: fixed;
+    top: 0;
+    background: rgb(51, 53, 69);
+    z-index: 100;
+  }
+}
