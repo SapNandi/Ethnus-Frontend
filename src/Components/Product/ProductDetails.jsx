@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./ProductDetails.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { getProductDetails, clearError } from "../../actions/productAction";
+import {
+  getProductDetails,
+  clearError,
+  getProducts,
+} from "../../actions/productAction";
 import { useAlert } from "react-alert";
 import Loader from "../Layout/Loader/Loader";
 
@@ -16,13 +20,16 @@ const ProductDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated && !isAuthenticated) {
-      alert.error("Login to Access The Feature!!");
+    if (!isAuthenticated) {
+      if (error) {
+        alert.error("Login to Access The Feature!!");
+        dispatch(clearError());
+      }
       navigate("/");
-      dispatch(clearError());
     }
     dispatch(getProductDetails(id));
-  }, [id]);
+    dispatch(getProducts());
+  }, [id, isAuthenticated]);
   return (
     <>
       {loading ? (
@@ -35,20 +42,18 @@ const ProductDetails = () => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src={item.video}
+                  src={item && item.video}
                   title="YouTube video player"
-                  frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
                 ></iframe>
               </div>
               <div className="content">
                 <div className="title">
-                  <h1>{item.name}</h1>
+                  <h1>{item && item.name}</h1>
                 </div>
-                <hr style={{width:"98%", marginLeft:"1rem"}}/>
+                <hr style={{ width: "98%", marginLeft: "1rem" }} />
                 <div className="desc">
-                  <p>{item.description}</p>
+                  <p>{item && item.description}</p>
                 </div>
               </div>
             </div>
@@ -57,9 +62,9 @@ const ProductDetails = () => {
                 product.map((item, i) => (
                   <div className="products">
                     <Link to={`/product/${item._id}`}>
-                      <img src={item.images.url} alt="" />
-                      <p>{item.name}</p>
-                      <small>{item.category}</small>
+                      <img src={item.images && item.images.url} alt="" />
+                      <p>{item && item.name}</p>
+                      <small>{item && item.category}</small>
                     </Link>
                   </div>
                 ))}
